@@ -7,17 +7,35 @@ using namespace std;
 
 
 int main() {
-    map<char, int> tiles = {{}};
+    vector<vector <char>> board;
 
-    int xsize = 3; //size of the dungeon (X-axis)
-    int ysize = 3; //size of the dungeon (Y-axis)
+    int xsize = 15; //size of the dungeon (X-axis)
+    int ysize = 5; //size of the dungeon (Y-axis)
 
-    for (int y = 0; y < ysize; y++) {
+    int middlex = xsize / 2;
+    int middley = ysize / 2;
 
-        cout << "#";
+    for (int col = 0; col < ysize; col++) {
+        board.push_back({'#'});
 
-        for (int x = 0; x < xsize; x++) {
-            cout << "#";
+        for (int row = 0; row < xsize-1; row++) {
+            if (col == 0 || col == ysize-1) {
+                board[col].push_back({'#'});
+            } else {
+                board[col].push_back({'.'});
+            }
+        }
+
+
+        board[col][xsize-1] = '#';
+    }
+
+    // The player spawns
+    board[middley][middlex] = '@';
+
+    for (auto& row : board) {
+        for (char val : row) {
+            cout << val;
 
             
         }
