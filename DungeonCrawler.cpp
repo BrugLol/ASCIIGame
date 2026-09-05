@@ -1,14 +1,27 @@
 #include <iostream>
 #include <vector>
+#include <map>
 
 using namespace std;
 
+
+
 int main() {
-    vector<string> c = {};
-    string text;
+    map<char, int> tiles = {{}};
 
-    cin >> text;
+    int xsize = 3; //size of the dungeon (X-axis)
+    int ysize = 3; //size of the dungeon (Y-axis)
 
-    c.push_back(text);
-    cout << c[1];
+    for (int y = 0; y < ysize; y++) {
+
+        cout << "#";
+
+        for (int x = 0; x < xsize; x++) {
+            cout << "#";
+
+            
+        }
+
+        cout << endl;
+    }
 }
